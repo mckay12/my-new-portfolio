@@ -10,7 +10,7 @@ import GridBackground from './components/GridBackground';
 function App() {
   return (
     <ReactLenis root>
-      <main className="w-full min-h-screen overflow-x-hidden selection:bg-indigo-500/30 selection:text-indigo-200">
+      <main className="w-full min-h-screen selection:bg-indigo-500/30 selection:text-indigo-200">
         <GridBackground />
         <Navbar />
         <Hero />

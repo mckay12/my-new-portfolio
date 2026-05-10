@@ -69,7 +69,7 @@ export default function Works() {
 
           <div className="w-full relative">
              {projects.map((p, idx) => (
-                <div key={p.id} className="sticky top-0 w-full min-h-screen pt-20 pb-8 flex flex-col">
+                <div key={p.id} className="sticky top-20 w-full min-h-screen pt-20 pb-8 flex flex-col" style={{ zIndex: idx + 10 }}>
                    {/* Number Header */}
                    <div className="flex mb-4">
                       {/* Empty spacer for stairs effect */}
