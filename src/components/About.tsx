@@ -19,7 +19,7 @@ export default function About() {
              initial={{ opacity: 0, x: -50, rotate: -5 }}
              whileInView={{ opacity: 1, x: 0, rotate: 12 }}
              whileHover={{ scale: 1.1, rotate: 4, zIndex: 30 }}
-             viewport={{ once: true, margin: "-100px" }}
+             viewport={{ once: true, margin: "0px" }}
              transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
              className="absolute top-[10%] left-[0%] xl:left-[10%] w-48 hidden lg:block z-20 cursor-pointer"
           >
@@ -33,7 +33,7 @@ export default function About() {
              initial={{ opacity: 0, x: 50, rotate: 5 }}
              whileInView={{ opacity: 1, x: 0, rotate: -12 }}
              whileHover={{ scale: 1.1, rotate: -4, zIndex: 30 }}
-             viewport={{ once: true, margin: "-100px" }}
+             viewport={{ once: true, margin: "0px" }}
              transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
              className="absolute top-[10%] right-[0%] xl:right-[10%] w-48 hidden lg:block z-20 cursor-pointer"
           >

@@ -86,7 +86,7 @@ export default function Works() {
                    <motion.div 
                       initial={{ opacity: 0, y: 50 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: "-50px" }}
+                      viewport={{ once: true, margin: "0px" }}
                       transition={{ duration: 0.6, ease: "easeOut" }}
                       className={`group w-full flex-1 ${p.color} rounded-[40px] border-4 border-white/20 p-6 lg:p-12 flex flex-col lg:flex-row shadow-2xl relative overflow-hidden backdrop-blur-md`}
                    >
