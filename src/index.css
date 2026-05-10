@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "DM Mono", monospace;
+  --font-handwriting: "Just Me Again Down Here", cursive;
+
+  /* Vibrant Palette */
+  --color-brand-blue: #818CF8;
+  --color-brand-yellow: #FACC15;
+  --color-brand-green: #34D399;
+  --color-brand-pink: #F472B6;
+  --color-brand-ink: #312E81;
+}
+
+body {
+  background-color: #6366F1;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.grid-bg {
+  background-image: 
+    radial-gradient(circle at 100% 0%, rgba(250, 204, 21, 0.25) 0%, transparent 500px),
+    radial-gradient(circle at 0% 100%, rgba(236, 72, 153, 0.25) 0%, transparent 600px);
+  background-attachment: fixed;
+  background-size: cover;
+}
