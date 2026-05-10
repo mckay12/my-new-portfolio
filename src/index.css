@@ -17,6 +17,7 @@ body {
   background-color: #312e81;
   color: #ffffff;
   overflow-x: hidden;
+  max-width: 100vw;
 }
 
 .grid-bg {

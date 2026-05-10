@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="fixed top-0 left-0 right-0 z-40 bg-indigo-700/50 backdrop-blur-sm border-b border-white/10 text-white">
       <div className="max-w-[1800px] mx-auto px-4 lg:px-12 h-20 flex justify-between items-center">
         
-        {/* Nav Left & Center */}
+        {/* Nav Left */}
         <div className="flex items-center gap-4 lg:gap-8">
           <div className="w-10 h-10 flex items-center justify-center bg-brand-yellow rounded-xl overflow-hidden relative group cursor-pointer p-2">
             <svg viewBox="0 0 50 25" fill="#312E81" className="w-full h-full">
@@ -14,15 +16,13 @@ export default function Navbar() {
             </svg>
           </div>
 
-          {/* Nav Center */}
+          {/* Nav Center (Desktop) */}
           <div className="hidden md:flex items-center space-x-6 text-indigo-100 font-bold">
             {["Home", "About", "Case study", "Playground"].map((item, i) => (
               <a
                 key={i}
                 href={`#${item.toLowerCase().replace(' ', '-')}`}
-                className={`hover:text-white transition-colors ${
-                  i === 0 ? 'text-white' : ''
-                }`}
+                className={`hover:text-white transition-colors ${i === 0 ? 'text-white' : ''}`}
               >
                 {i === 0 && <span className="absolute w-1 h-1 bg-brand-yellow rounded-full -ml-3 mt-2.5"></span>}
                 <span className="relative z-10">{item}</span>
@@ -31,8 +31,8 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Nav Right */}
-        <div className="flex items-center gap-3">
+        {/* Nav Right (Desktop) */}
+        <div className="hidden md:flex items-center gap-3">
           <a href="mailto:michealkpelle5@gmail.com" className="group flex items-center h-10 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 overflow-hidden px-0 hover:px-4 cursor-pointer">
             <span className="w-10 h-10 shrink-0 flex items-center justify-center font-bold text-xs">EM</span>
             <span className="max-w-0 opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-hover:ml-2 transition-all duration-300 whitespace-nowrap text-sm font-bold truncate">michealkpelle5@gmail.com</span>
@@ -45,7 +45,38 @@ export default function Navbar() {
             CONTACT
           </a>
         </div>
+
+        {/* Hamburger (Mobile) */}
+        <button
+          className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle Menu"
+        >
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+        </button>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      {menuOpen && (
+        <div className="md:hidden bg-indigo-800/95 backdrop-blur-sm border-t border-white/10 px-6 py-6 flex flex-col gap-4">
+          {["Home", "About", "Case study", "Playground"].map((item, i) => (
+            <a
+              key={i}
+              href={`#${item.toLowerCase().replace(' ', '-')}`}
+              className="text-indigo-100 font-bold text-lg hover:text-white transition-colors"
+              onClick={() => setMenuOpen(false)}
+            >
+              {item}
+            </a>
+          ))}
+          <hr className="border-white/10 my-2" />
+          <a href="#contact" className="bg-white text-indigo-600 px-6 py-3 rounded-full font-bold shadow-lg text-center uppercase" onClick={() => setMenuOpen(false)}>
+            CONTACT
+          </a>
+        </div>
+      )}
     </div>
   );
 }
